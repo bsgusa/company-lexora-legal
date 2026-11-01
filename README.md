@@ -46,10 +46,16 @@ A document-automation engine for career and immigration paperwork:
 
 ```
 ├── index.html            # Main web entry point
+├── immigration.html      # Immigration intake + form catalogue
+├── auth.html             # Magic-link sign-in
+├── dashboard.html        # Authenticated case workspace
 ├── css/                  # Styles
 ├── js/                   # Client interactions
+├── legal/                # Privacy, Terms, Refunds, Cookies, DPA,
+│                         # Sub-processors, Security (all draft, pending review)
 ├── assets/               # Brand and static assets
-├── docs/                 # Architecture and deployment notes
+├── docs/                 # Architecture, deployment, and the attorney brief
+│   └── legal/            # MSA draft (internal)
 ├── supabase/             # Database schema, policies, edge functions
 ├── lexora-ui/            # React/Next.js UI components (in progress)
 └── README.md
@@ -57,6 +63,18 @@ A document-automation engine for career and immigration paperwork:
 
 See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) and
 [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md) for implementation detail.
+
+### Legal pages
+
+The footer used to link “Privacy Policy” and “Terms of Service” to `#`. They now
+point at real pages in [`legal/`](legal/), each carrying a **“draft — not yet
+reviewed by an attorney”** banner. Do not remove that banner until counsel signs
+off — CI fails the build if it disappears. The review request itself is
+[`docs/ATTORNEY_BRIEF.md`](docs/ATTORNEY_BRIEF.md); the business-customer MSA
+draft is [`docs/legal/MSA-DRAFT.md`](docs/legal/MSA-DRAFT.md).
+
+Pricing on the site is labelled **planned, not yet charging**. No payment is
+collected anywhere in this repository.
 
 ---
 

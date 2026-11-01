@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "start": "npx serve .",
-    "dev": "npx serve ."
+    "dev": "npx serve .",
+    "check:claims": "python3 scripts/check-claims.py"
   },
   "dependencies": {
     "framer-motion": "^12.38.0"
