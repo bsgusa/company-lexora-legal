@@ -34,6 +34,9 @@ jobs:
             exit 1
           fi
 
+      - name: Truthful-claims check
+        run: python3 scripts/check-claims.py
+
       - name: TypeScript check (if tsc available)
         run: npx tsc --noEmit 2>/dev/null || echo "tsc not configured — skipping"
 
@@ -50,3 +53,35 @@ jobs:
           done
           curl -sf http://127.0.0.1:4173/index.html >/dev/null
           echo "index.html served OK"
+
+          # Every page the footer links to must exist. A "Privacy Policy"
+          # pointing at "#" is worse than no link at all.
+          for page in \
+            index.html immigration.html auth.html dashboard.html \
+            legal/privacy.html legal/terms.html legal/refund.html \
+            legal/cookies.html legal/dpa.html legal/subprocessors.html \
+            legal/security.html; do
+            curl -sf "http://127.0.0.1:4173/$page" >/dev/null \
+              || { echo "::error::missing page: $page"; exit 1; }
+          done
+          echo "all pages served OK"
+
+      - name: No dead legal links
+        run: |
+          # Fail if any footer/legal anchor still points at "#".
+          if grep -nE '<a[^>]+href="#"' index.html immigration.html auth.html dashboard.html; then
+            echo "::error::A link points at '#'. Point it at a real page or remove it."
+            exit 1
+          fi
+          echo "no placeholder links"
+
+      - name: Legal pages still carry the draft banner
+        run: |
+          # The banner comes off only after counsel signs off (see
+          # docs/ATTORNEY_BRIEF.md). If someone deletes it, the build says why.
+          for page in legal/privacy.html legal/terms.html legal/refund.html \
+                      legal/cookies.html legal/dpa.html legal/subprocessors.html; do
+            grep -q "not yet reviewed by an attorney" "$page" \
+              || { echo "::error::$page is missing the 'draft — pending attorney review' banner"; exit 1; }
+          done
+          echo "draft banners present"

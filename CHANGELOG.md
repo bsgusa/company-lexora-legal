@@ -1,5 +1,7 @@
 # Changelog
 
+<!-- truthful-claims: history — this file quotes the old, false claims on purpose. -->
+
 All notable changes to Lexora AI are documented here.
 
 > **Correction (2026-10-22).** Entries below describe the marketing site as

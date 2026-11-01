@@ -438,5 +438,17 @@ loadCases();
 document.getElementById('statSubs').textContent = '—';
 getFormSubmissions(user.id).then(({data}) => { document.getElementById('statSubs').textContent = data?.length ?? '0'; });
 </script>
+
+<footer style="border-top:1px solid rgba(201,168,76,.18);margin-top:3rem;padding:1.5rem 1rem 2.5rem;text-align:center;font-size:.8rem;line-height:2;color:#8888A8">
+  <div>
+    <a href="index.html" style="color:#8888A8;text-decoration:none">&larr; Lexora AI</a>
+    <span> &middot; </span><a href="legal/privacy.html" style="color:#8888A8;text-decoration:none">Privacy</a>
+    <span> &middot; </span><a href="legal/terms.html" style="color:#8888A8;text-decoration:none">Terms</a>
+    <span> &middot; </span><a href="legal/refund.html" style="color:#8888A8;text-decoration:none">Refunds</a>
+    <span> &middot; </span><a href="legal/security.html" style="color:#8888A8;text-decoration:none">Security</a>
+    <span> &middot; </span><a href="mailto:support@lexoraai.org" style="color:#8888A8;text-decoration:none">support@lexoraai.org</a>
+  </div>
+  <div>&copy; 2026 Lexora AI LLC. Lexora AI is not a law firm and does not provide legal advice. Government filing fees are set by the agency and paid by you directly to the agency.</div>
+</footer>
 </body>
 </html>

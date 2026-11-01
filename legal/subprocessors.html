@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sub-processors — Lexora AI</title>
+  <meta name="description" content="The exact list of vendors that process data for Lexora AI, what each one does, and where it runs." />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/legal.css" />
+</head>
+<body>
+
+<header class="lg-header">
+  <a href="../index.html" class="lg-brand">
+    <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+      <path d="M20 3L37 12V28L20 37L3 28V12L20 3Z" fill="url(#lg)"/>
+      <path d="M13 16H27M13 20H22M13 24H25" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <defs><linearGradient id="lg" x1="3" y1="3" x2="37" y2="37" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#C9A84C"/><stop offset="100%" stop-color="#F0D070"/>
+      </linearGradient></defs>
+    </svg>
+    <span>Lexora AI</span>
+  </a>
+  <nav class="lg-nav">
+    <a href="../index.html">Home</a>
+    <a href="../immigration.html">Immigration</a>
+    <a href="terms.html">Terms</a>
+    <a href="refund.html">Refunds</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<div class="lg-draft">
+  <span aria-hidden="true">⚠️</span>
+  <span><strong>Draft — not yet reviewed by an attorney.</strong> Kept accurate by hand. If a vendor is added and this page is not updated, this page is wrong and we fix it.</span>
+</div>
+
+<main>
+  <h1>Sub-processors</h1>
+  <p class="lg-meta">Last updated 1 November 2026 · 30 days' notice before adding a vendor that processes your documents</p>
+
+  <div class="lg-callout">
+    <strong>Plain version.</strong> Six vendors touch this site. Three of them are load-bearing for your data (hosting, database, AI drafting); three only deliver fonts or JavaScript to your browser. Nobody on this list is allowed to use your documents for their own advertising, and we do not sell data to anyone.
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Vendor</th><th>Purpose</th><th>Data</th><th>Location</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Supabase</strong></td>
+        <td>Postgres database, authentication, file storage</td>
+        <td>Account email, intake records, uploaded documents, case notes</td>
+        <td>United States</td>
+      </tr>
+      <tr>
+        <td><strong>Vercel</strong></td>
+        <td>Website hosting and delivery</td>
+        <td>Request logs (IP, user agent, timestamps)</td>
+        <td>United States / global edge</td>
+      </tr>
+      <tr>
+        <td><strong>Commercial AI model providers</strong> (via the Balamonis AI Gateway)</td>
+        <td>Drafting and document checking</td>
+        <td>The document text and prompt needed to produce the draft</td>
+        <td>United States</td>
+      </tr>
+      <tr>
+        <td><strong>Google Fonts</strong></td>
+        <td>Typeface delivery</td>
+        <td>IP address, user agent</td>
+        <td>Global</td>
+      </tr>
+      <tr>
+        <td><strong>jsDelivr</strong></td>
+        <td>JavaScript library delivery (Supabase client)</td>
+        <td>IP address, user agent</td>
+        <td>Global</td>
+      </tr>
+      <tr>
+        <td><strong>unpkg</strong></td>
+        <td>Stylesheet delivery (AOS animations)</td>
+        <td>IP address, user agent</td>
+        <td>Global</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Planned, not yet in use</h2>
+  <p>We will update this page before any of these go live, and give notice under the <a href="dpa.html">DPA</a>:</p>
+  <ul>
+    <li><strong>Stripe</strong> — payment processing, when billing opens. Card data goes to Stripe, never to us.</li>
+    <li><strong>An email delivery provider</strong> — transactional email such as magic links and delivery notices.</li>
+  </ul>
+
+  <h2>AI providers, specifically</h2>
+  <p>We route model requests through our own gateway so that a venture does not hardcode a provider. Where a provider's terms allow it, we configure the account so submitted content is not used to train models. We will name the specific providers in a signed DPA before we process client documents at volume, and we will not claim a provider “never retains anything” unless their contract says so.</p>
+
+  <h2>How to object</h2>
+  <p>Email <a href="mailto:support@lexoraai.org">support@lexoraai.org</a> with the vendor name and your data-protection reason. We respond within 15 days. If we cannot resolve it, you may terminate the affected service and we refund the unused portion.</p>
+
+  <h2>History</h2>
+  <table>
+    <thead><tr><th>Date</th><th>Change</th></tr></thead>
+    <tbody>
+      <tr><td>1 Nov 2026</td><td>Page created. No vendors added or removed.</td></tr>
+    </tbody>
+  </table>
+</main>
+
+<footer class="lg-footer">
+  <div class="lg-footer-links">
+    <a href="../index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+    <a href="refund.html">Refunds</a>
+    <a href="cookies.html">Cookies</a>
+    <a href="dpa.html">DPA</a>
+    <a href="subprocessors.html">Sub-processors</a>
+    <a href="security.html">Security</a>
+  </div>
+  <div>© 2026 Lexora AI LLC. All rights reserved. Lexora AI is not a law firm and does not provide legal advice.</div>
+</footer>
+
+</body>
+</html>
