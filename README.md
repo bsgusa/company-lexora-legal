@@ -1,10 +1,32 @@
-# AI-Job-Automation — Career & Document Automation Engine
+# Lexora AI — Legal (lexoraai.space)
 
 **Document intake, AI-assisted drafting, and case tracking for immigration and
 legal paperwork. Every outbound action requires recorded user approval.**
 
-This repository is part of the Balamonis Group. It is a working application, not
-a finished product, and this README describes only what exists.
+Live at [lexoraai.space](https://lexoraai.space) · Lexora AI LLC, Saint
+Petersburg, Florida, USA · part of the Balamonis Group.
+
+It is a working application, not a finished product, and this README describes
+only what exists.
+
+---
+
+## Which repo is this?
+
+Lexora AI runs two separate products with two separate repositories. This one is the **legal** product.
+
+| Product | Domain | Repository |
+|---|---|---|
+| **Legal** — immigration document intake, contract review, legal-information pages | [lexoraai.space](https://lexoraai.space) | `bsgusa/company-lexora-legal` (this repo) |
+| **Jobs** — job board, AI career coach, certifications, employer tools | [lexoraai.org](https://lexoraai.org) | `bsgusa/company-lexora-jobs` |
+
+The two products share an entity, not a codebase. Job-board features belong in
+`company-lexora-jobs`, not here.
+
+> **Renamed.** This repository was `AI-Job-Automation`, then
+> `company-lexora-legal-tech-ops-`, and is now `company-lexora-legal`. The old
+> names are why the legal site and the jobs site were confused. GitHub redirects
+> the old URLs.
 
 > **Correction notice (2026-09-18, reaffirmed 2026-10-22).** Earlier versions of
 > this README claimed SOC 2, ISO 27001, HIPAA, CCPA, GDPR, and FedRAMP
@@ -18,7 +40,7 @@ a finished product, and this README describes only what exists.
 
 ## What this is
 
-A document-automation engine for career and immigration paperwork:
+A document-automation engine for immigration and legal paperwork:
 
 - **Document intake** — collect and structure the documents a case needs.
 - **AI-assisted drafting** — draft and revise text through the Balamonis AI
@@ -116,8 +138,8 @@ describe readiness as certification.
 ## Quick start
 
 ```bash
-git clone https://github.com/bsgusa/AI-Job-Automation.git
-cd AI-Job-Automation
+git clone https://github.com/bsgusa/company-lexora-legal.git
+cd company-lexora-legal
 open index.html          # macOS — or use any static server
 # or, for live reload:
 npx serve .
